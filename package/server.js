@@ -200,10 +200,10 @@ export { start };
 
 onMessage('client-refresh', (options) => {
   console.log('CLIENT TESTS RESTARTING (client-refresh)', options === undefined ? '' : options);
-  clientTests()
+  clientTests();
 });
 
 onMessage('webapp-reload-client', (options) => {
   console.log('CLIENT TESTS RESTARTING (webapp-reload-client)', options === undefined ? '' : options);
-  clientTests()
+  clientTests();
 });
