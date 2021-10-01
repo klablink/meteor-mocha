@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.3
+
+- Allow compatibility with `lmieulet:meteor-coverage@4.0.0` for compatibility with Meteor 2.3+
+
 ## 2.0.2
 
 - Support either 1.x or 2.x version of `http` package

@@ -2,3 +2,5 @@ tests/dummy_app/packages
 node_modules
 npm-debug.log
 .DS_Store
+
+.idea/
