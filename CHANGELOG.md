@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.0.4
+
+- Bump `meteortesting:browser-tests` to v1.4.2
+- Bump `lmieulet:meteor-coverage` to be able to use v4.1.0
+
 ## 2.0.3
 
 - Allow compatibility with `lmieulet:meteor-coverage@4.0.0` for compatibility with Meteor 2.3+

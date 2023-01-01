@@ -10,14 +10,14 @@
     "lint": "eslint ./package",
     "publish": "cd package && semantic-release"
   },
-  "author": "Dispatch Technologies, Inc. (http://www.dispatch.me/)",
+  "author": "Dispatch Technologies, Inc. (https://www.dispatch.me/)",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.20.1",
-    "semantic-release": "17.2.3",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.26.0",
+    "semantic-release": "17.4.7",
     "semantic-release-meteor": "0.0.8"
   }
 }
