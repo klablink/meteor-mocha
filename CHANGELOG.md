@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.1.0
+
+- Re-run tests on browser refresh [PR #106](https://github.com/Meteor-Community-Packages/meteor-mocha/pull/106) and [PR #120](https://github.com/Meteor-Community-Packages/meteor-mocha/pull/120)
+- Updated dev dependencies
+
 ## 2.0.4
 
 - Bump `meteortesting:browser-tests` to v1.4.2

@@ -14,10 +14,10 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "10.1.0",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-plugin-import": "2.26.0",
-    "semantic-release": "19.0.5",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "semantic-release": "20.1.0",
     "semantic-release-meteor": "0.0.8"
   }
 }
