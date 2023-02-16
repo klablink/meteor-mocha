@@ -1,5 +1,5 @@
 /* global Package: false */
-import { mocha } from 'meteor/meteortesting:mocha-core';
+import { mocha } from 'meteor/grubba:mocha-core';
 import prepForHTMLReporter from './prepForHTMLReporter';
 import './browser-shim';
 
