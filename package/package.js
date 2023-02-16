@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'grubba:mocha',
+  name: 'meteortesting:mocha',
   summary: 'Run Meteor package or app tests with Mocha',
   git: 'https://github.com/meteortesting/meteor-mocha.git',
   documentation: '../README.md',
@@ -9,7 +9,7 @@ Package.describe({
 
 Package.onUse(function onUse(api) {
   api.use([
-    'grubba:mocha-core@8.2.1',
+    'meteortesting:mocha-core@8.2.1',
     'ecmascript@0.15.1',
   ]);
 

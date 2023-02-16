@@ -1,5 +1,5 @@
 /* global Package */
-import { mochaInstance } from "meteor/grubba:mocha-core";
+import { mochaInstance } from "meteor/meteortesting:mocha-core";
 import { startBrowser } from "meteor/meteortesting:browser-tests";
 import { onMessage } from "meteor/inter-process-messaging";
 
