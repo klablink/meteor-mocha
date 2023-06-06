@@ -1,5 +1,5 @@
 /* global Package: false */
-import { mocha } from 'meteor/meteortesting:mocha-core';
+import { mocha } from 'meteor/denyhs:mocha-core';
 import prepForHTMLReporter from './prepForHTMLReporter';
 import './browser-shim';
 
