@@ -1,6 +1,6 @@
 /* global Package */
-import { mochaInstance } from "meteor/denyhs:mocha-core";
-import { startBrowser } from "meteor/grubba:browser-tests";
+import { mochaInstance } from "meteor/meteortesting:mocha-core";
+import { startBrowser } from "meteor/meteortesting:browser-tests";
 import { onMessage } from "meteor/inter-process-messaging";
 
 import fs from "fs";
