@@ -8,8 +8,8 @@ import fs from "fs";
 import setArgs from "./runtimeArgs";
 import handleCoverage from "./server.handleCoverage";
 
-var { mochaOptions, runnerOptions, coverageOptions } = setArgs();
-var { grep, invert, reporter, serverReporter, serverOutput, clientOutput } =
+let { mochaOptions, runnerOptions, coverageOptions } = setArgs();
+let { grep, invert, reporter, serverReporter, serverOutput, clientOutput } =
   mochaOptions || {};
 
 if (Package["browser-policy-common"] && Package["browser-policy-content"]) {
@@ -159,7 +159,7 @@ function clientTests() {
 
   printHeader("CLIENT");
   clientTestsRunning = true;
-
+clientLogBuffer('START BROWSER')
   startBrowser({
     stdout(data) {
       if (clientOutput) {
@@ -198,6 +198,7 @@ function clientTests() {
 
 // Before Meteor calls the `start` function, app tests will be parsed and loaded by Mocha
 function start() {
+  clientLogBuffer('START <<<<<<<<<<<<>>>>>>>>>>>>')
   runnerOptions = setArgs().runnerOptions;
   coverageOptions = setArgs().coverageOptions;
   mochaOptions = setArgs().mochaOptions;
