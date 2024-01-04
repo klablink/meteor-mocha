@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.0.0
+
+- Meteor 3.0 compatibility; drop Fibers
+
 ## 2.1.0
 
 - Re-run tests on browser refresh [PR #106](https://github.com/Meteor-Community-Packages/meteor-mocha/pull/106) and [PR #120](https://github.com/Meteor-Community-Packages/meteor-mocha/pull/120)

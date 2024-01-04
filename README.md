@@ -1,6 +1,8 @@
-# meteortesting:mocha
+# Meteor Mocha - meteortesting:mocha
 
-_Formerly published as dispatch:mocha. Originally created by [Dispatch](http://www.dispatch.me/) but now community maintained._
+
+
+> _Formerly published as dispatch:mocha. Originally created by [Dispatch](http://www.dispatch.me/) but now community maintained._
 
 A Mocha test driver package for Meteor. This package reports server AND client test results in the server console and can be used for running tests on a CI server or locally.
 
@@ -14,7 +16,10 @@ meteor add meteortesting:mocha
 
 Not installing the package is possible but not advisable when creating a CI pipeline because the system will always download the latest version available, which might break your CI pipeline in a future major release of this package.
 
-Since version 2.0.0 the package [lmieulet:meteor-coverage](https://github.com/serut/meteor-coverage) is no longer bundled with this package. If you permanently want code coverage please run:
+Since version 2.0.0 the package [lmieulet:meteor-coverage](https://github.com/serut/meteor-coverage) 
+is no longer bundled with this package. 
+
+If you permanently want code coverage please run:
 
 ```bash
 meteor add lmieulet:meteor-coverage
@@ -25,6 +30,8 @@ If you rather want the package to be included only for a single run, add the par
 ```bash
 meteor test --driver-package meteortesting:mocha --extra-packages lmieulet:meteor-coverage
 ```
+
+For the full documentation of meteor coverage, please consult [the docs in its repo](https://github.com/serut/meteor-coverage/).
 
 ## Run app tests
 
