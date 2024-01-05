@@ -3,13 +3,14 @@ Package.describe({
   summary: 'Run Meteor package or app tests with Mocha',
   git: 'https://github.com/meteortesting/meteor-mocha.git',
   documentation: '../README.md',
-  version: '3.0.0-beta300.0',
+  version: '3.1.0-beta300.0',
   testOnly: true,
 });
 
 Package.onUse(function onUse(api) {
   api.use([
-    'meteortesting:mocha-core@8.2.0-beta300.0',
+    'modules',
+    'meteortesting:mocha-core@8.3.1-beta300.0',
     'ecmascript@0.16.8-alpha300.11'
   ]);
 
