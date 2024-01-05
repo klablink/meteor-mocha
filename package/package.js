@@ -9,7 +9,6 @@ Package.describe({
 
 Package.onUse(function onUse(api) {
   api.use([
-    'modules',
     'meteortesting:mocha-core@8.3.1-beta300.0',
     'ecmascript@0.16.8-alpha300.11'
   ]);
