@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "Setup package link"
-cd tests/dummy_app/
+cd tests/dummy_app/ || exit 1
 meteor npm run setup
 
 # We expect all unit tests to pass
