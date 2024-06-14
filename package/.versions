@@ -10,8 +10,8 @@ http@1.0.10
 inter-process-messaging@0.1.1
 meteor@1.11.5
 meteortesting:browser-tests@1.6.0
-meteortesting:mocha@3.1.0-rc.0
-meteortesting:mocha-core@8.3.1-rc300.0
+meteortesting:mocha@3.1.0-rc.1
+meteortesting:mocha-core@8.3.1-rc300.1
 modern-browsers@0.1.10
 modules@0.20.0
 modules-runtime@0.13.1
