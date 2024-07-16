@@ -3,19 +3,19 @@ Package.describe({
   summary: 'Run Meteor package or app tests with Mocha',
   git: 'https://github.com/meteortesting/meteor-mocha.git',
   documentation: '../README.md',
-  version: '3.1.0-rc.1',
+  version: '3.0.0-rc.1',
   testOnly: true,
 });
 
 Package.onUse(function onUse(api) {
-  api.versionsFrom(['2.8.0', '3.0-rc.4'])
+  api.versionsFrom(['2.8.0', '3.0'])
   api.use([
-    'meteortesting:mocha-core@8.3.1-rc300.1',
+    'meteortesting:mocha-core@8.2.0',
     'ecmascript'
   ]);
 
   api.use([
-    'meteortesting:browser-tests@1.6.0-rc300.1',
+    'meteortesting:browser-tests@1.7.0',
     'http@1.0.0 || 2.0.0'
   ], 'server');
   api.use('browser-policy', 'server', { weak: true });
