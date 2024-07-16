@@ -14,8 +14,8 @@
     "test:app:puppeteer:watch": "METEOR_PACKAGE_DIRS=../../:../../../ TEST_WATCH=1 TEST_BROWSER_DRIVER=puppeteer meteor test --full-app --driver-package meteortesting:mocha"
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.5",
-    "meteor-node-stubs": "^1.2.7",
+    "@babel/runtime": "^7.24.8",
+    "meteor-node-stubs": "^1.2.9",
     "puppeteer": "^18.2.1"
   }
 }
