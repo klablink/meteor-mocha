@@ -16,14 +16,14 @@ export default (coverageOptions) => {
       cLog('- In coverage');
       HTTP.get(Meteor.absoluteUrl('coverage/import'), (error, response) => {
         if (error) {
-          reject(new Error('Failed to import coverage file'));
+          reject(new Error(`Failed to import coverage file. ${error.message}`));
           return;
         }
 
         const { statusCode } = response;
 
         if (statusCode !== 200) {
-          reject(new Error('Failed to import coverage file'));
+          reject(new Error(`Failed to import coverage file. ${statusCode} ${response.data}`));
         }
         resolve();
       });
@@ -34,14 +34,14 @@ export default (coverageOptions) => {
       const url = Meteor.absoluteUrl(`/coverage/export/${fileType}`);
       HTTP.get(url, (error, response) => {
         if (error) {
-          reject(new Error(`Failed to save ${fileType} ${reportType}`));
+          reject(new Error(`Failed to save ${fileType} ${reportType}. ${error.message}`));
           return;
         }
 
         const { statusCode } = response;
 
         if (statusCode !== 200) {
-          reject(new Error(`Failed to save ${fileType} ${reportType}`));
+          reject(new Error(`Failed to save ${fileType} ${reportType}. ${statusCode} ${response.data}`));
         }
         resolve();
       });
@@ -51,14 +51,14 @@ export default (coverageOptions) => {
       cLog('- Out remap');
       HTTP.get(Meteor.absoluteUrl('/coverage/export/remap'), (error, response) => {
         if (error) {
-          reject(new Error('Failed to remap your coverage'));
+          reject(new Error(`Failed to remap your coverage. ${error.message}`));
           return;
         }
 
         const { statusCode } = response;
 
         if (statusCode !== 200) {
-          reject(new Error('Failed to remap your coverage'));
+          reject(new Error(`Failed to remap your coverage. ${statusCode} ${response.data}`));
         }
         resolve();
       });
