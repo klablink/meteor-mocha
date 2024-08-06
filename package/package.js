@@ -19,7 +19,7 @@ Package.onUse(function onUse(api) {
     'http@1.0.0 || 2.0.0'
   ], 'server');
   api.use('browser-policy', 'server', { weak: true });
-  api.use('lmieulet:meteor-coverage@1.1.4 || 2.0.1 || 3.0.0 || 4.3.0', 'client', { weak: true });
+  api.use('lmieulet:meteor-coverage@1.1.4 || 2.0.1 || 3.0.0 || 4.3.0 || 5.0.0', 'client', { weak: true });
 
   api.mainModule('client.js', 'client');
   api.mainModule('server.js', 'server');
