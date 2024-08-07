@@ -1,4 +1,4 @@
-import { HTTP } from 'meteor/http';
+import { fetch } from 'meteor/fetch';
 
 export default (coverageOptions) => {
   let promise = Promise.resolve(true);
@@ -12,57 +12,30 @@ export default (coverageOptions) => {
 
     cLog('Export code coverage');
 
-    const importCoverageDump = () => new Promise((resolve, reject) => {
+    const importCoverageDump = () => async () => {
       cLog('- In coverage');
-      HTTP.get(Meteor.absoluteUrl('coverage/import'), (error, response) => {
-        if (error) {
-          reject(new Error(`Failed to import coverage file. ${error.message}`));
-          return;
-        }
+      return request({
+        url: 'coverage/import',
+        message: 'Failed to import coverage file.'
+      })
+    };
 
-        const { statusCode } = response;
-
-        if (statusCode !== 200) {
-          reject(new Error(`Failed to import coverage file. ${statusCode} ${response.data}`));
-        }
-        resolve();
-      });
-    });
-
-    const exportReport = (fileType, reportType) => new Promise((resolve, reject) => {
+    const exportReport = async (fileType, reportType) => {
       cLog(`- Out ${fileType}`);
-      const url = Meteor.absoluteUrl(`/coverage/export/${fileType}`);
-      HTTP.get(url, (error, response) => {
-        if (error) {
-          reject(new Error(`Failed to save ${fileType} ${reportType}. ${error.message}`));
-          return;
-        }
 
-        const { statusCode } = response;
+      return request({
+        url: `/coverage/export/${fileType}`,
+        message: `Failed to save ${fileType} ${reportType}.`
+      })
+    };
 
-        if (statusCode !== 200) {
-          reject(new Error(`Failed to save ${fileType} ${reportType}. ${statusCode} ${response.data}`));
-        }
-        resolve();
-      });
-    });
-
-    const exportRemap = () => new Promise((resolve, reject) => {
+    const exportRemap = async () => {
       cLog('- Out remap');
-      HTTP.get(Meteor.absoluteUrl('/coverage/export/remap'), (error, response) => {
-        if (error) {
-          reject(new Error(`Failed to remap your coverage. ${error.message}`));
-          return;
-        }
-
-        const { statusCode } = response;
-
-        if (statusCode !== 200) {
-          reject(new Error(`Failed to remap your coverage. ${statusCode} ${response.data}`));
-        }
-        resolve();
-      });
-    });
+      return request({
+        url: '/coverage/export/remap',
+        message: '`Failed to remap your coverage.'
+      })
+    };
 
     if (coverageOptions.in.coverage) {
       promise = promise.then(() => importCoverageDump());
@@ -101,3 +74,28 @@ export default (coverageOptions) => {
 
   return promise;
 };
+
+/**
+ * Makes a standardized HTTP GET request to the server.
+ * @private
+ * @param url {string} relative path to the server endpoint
+ * @param message {string} message to be added, in case an error is thrown
+ * @return {Promise<any>}
+ */
+const request = async ({ url, message }) => {
+  let response
+  let data
+  try {
+    response = await fetch(Meteor.absoluteUrl(url));
+    data = await response.json();
+  } catch (error) {
+    throw new Error(`${message} ${error.message}`);
+  }
+
+
+  if (response?.statusCode !== 200) {
+    throw new Error(`${message} ${response?.statusCode} ${data}`);
+  }
+
+  return data
+}

@@ -16,7 +16,7 @@ Package.onUse(function onUse(api) {
 
   api.use([
     'meteortesting:browser-tests@1.7.0',
-    'http@1.0.0 || 2.0.0'
+    'fetch'
   ], 'server');
   api.use('browser-policy', 'server', { weak: true });
   api.use('lmieulet:meteor-coverage@1.1.4 || 2.0.1 || 3.0.0 || 4.0.0 || 5.0.0', 'client', { weak: true });
