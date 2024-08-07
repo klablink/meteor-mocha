@@ -17,8 +17,8 @@ const request = async ({ url, message }) => {
     throw new Error(`${message} ${error.message}`);
   }
 
-  if (response?.statusCode !== 200) {
-    throw new Error(`${message} ${response?.statusCode} ${data}`);
+  if (response?.status !== 200) {
+    throw new Error(`${message} ${response?.status} ${data}`);
   }
 
   return data;
